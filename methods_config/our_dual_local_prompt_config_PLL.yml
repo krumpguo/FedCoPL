@@ -1,0 +1,33 @@
+DATASET_DIR: "$DATASET_DIR"
+DATASET_NAME: "$DATASET_NAME"
+# Model
+MODALITY: 'text'
+MODEL: "$MODEL"
+# Visual ecoder
+VIS_ENCODER: "$VIS_ENCODER"
+# Prompt template
+PROMPT_TEMPLATE: 'imported in main.py'
+# Number of shats per classes in SSL
+N_LABEL: 2  # The default labeled instacnes in SSL
+
+# Prefix size
+PREFIX_SIZE: 16
+N_PSEUDOSHOTS: 16 
+MEAN_INIT: 0
+VAR_INIT: 0.02
+# Scheduler
+SCHEDULER: "cosine"
+# Scheduler warmup epochs
+WARMUP_EPOCHS: 0
+WARMUP_LR: 0.0001
+# Number of accumulation iter
+ACCUMULATION_ITER: 1
+# Optimizer teacher
+OPTIM: "SGD"
+
+
+
+
+
+
+
