@@ -107,7 +107,7 @@ class TrainerBase:
             log.info(f"Loss is infinite or NaN!")
             raise FloatingPointError("Loss is infinite or NaN!")
 
-class Our_Dual_Local_Prompt(TrainerBase):
+class FedCoPL(TrainerBase):
     def __init__(
         self,
         config,
