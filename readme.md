@@ -16,4 +16,4 @@ Here is an example to run FedCoPL:
 nohup bash run-textPT_ALL.sh
 ```
 ### Acknowledgement
-We borrow some codes from [CPL](https://github.com/vanillaer/CPL-ICML2024)
+We borrow some code from [CPL](https://github.com/vanillaer/CPL-ICML2024)
