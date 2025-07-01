@@ -14,7 +14,7 @@ from accelerate import Accelerator
 import numpy as np
 from methods.unsupervised_learning_new import (
     TextualFPL_PL,
-    Our_Dual_Local_Prompt
+    FedCoPL
 )
 
 from utils import (
@@ -389,7 +389,7 @@ def workflow_new(dataset_dir, obj_conf):
 
     if obj_conf.MODEL == "our_dual_local_prompt":
         log.info(f"The model in use is: {obj_conf.MODEL}")
-        local_trainer = Our_Dual_Local_Prompt(
+        local_trainer = FedCoPL(
             obj_conf, 
             label_to_idx, 
             device=device, 
