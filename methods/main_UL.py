@@ -437,8 +437,8 @@ def workflow_new(dataset_dir, obj_conf):
                     if round == 0:
                         local_trainer.model.load_state_dict(initial_global_weights,strict=False)
                     else:
-                        local_trainer.model.load_state_dict(global_weights,strict=False) # yihui buhuilai 
-                        local_trainer.model.load_state_dict(local_prompt_weights_per[client],strict=False)  # yihui buhuilai 
+                        local_trainer.model.load_state_dict(global_weights,strict=False) 
+                        local_trainer.model.load_state_dict(local_prompt_weights_per[client],strict=False)  
                     local_selector_pre.append(InstanceSelector(label_to_idx=label_to_idx, cfg=obj_conf, device=device))
                     monitor_and_accelerate(UL_fed_train_lbs_true[client], train_dataset_fed[client], local_trainer, local_selector_pre[client])
 
@@ -492,11 +492,6 @@ def workflow_new(dataset_dir, obj_conf):
 
                 for client in range(obj_conf.client_num):
                     log.info(f"------------------------generate pesudolabels for client {client}--------------------------------")
-                    if round == 0:
-                        local_trainer.model.load_state_dict(initial_global_weights,strict=False)
-                    else:
-                        local_trainer.model.load_state_dict(global_weights,strict=False) # yihui buhuilai 
-                        local_trainer.model.load_state_dict(local_prompt_weights_per[client],strict=False)  # yihui buhuilai 
                     obj_conf.N_PSEUDOSHOTS = copy.deepcopy(local_sample_per_class[client])
                     train_dataset_fed_use[client] = copy.deepcopy(train_dataset_fed[client])
                     local_selector.append(InstanceSelector(label_to_idx=label_to_idx, cfg=obj_conf, device=device, N_PSEUDOSHOTS=True))
